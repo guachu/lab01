@@ -5,7 +5,9 @@
  */
 package lab01;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,7 +16,20 @@ import java.util.Scanner;
  */
 public class Ejercicio2 {
     
-    public static void Start() {
     
+    public void Start() {
+        
+       List frases = new ArrayList();
+       Scanner scanner = new Scanner(System.in);
+       String line;
+       while (!(line = scanner.nextLine()).isEmpty()){
+           frases.add(line);
+       } 
+       scanner.close();
+       for (int i = 0; i < frases.size(); i++){
+           int valor = i+1;
+           System.out.println(valor + " " + frases.get(i));
+       }
+        
     }
 }
