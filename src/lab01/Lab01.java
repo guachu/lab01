@@ -18,54 +18,18 @@ import java.util.Scanner;
  */
 public class Lab01 {
 
-    
-    //Atributos
-    static List List1 = new ArrayList();
-    static List List2 = new ArrayList();
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        System.out.println("Este es el menu principal, que ejercicio quiere ver? (1,2)");
         Scanner scanner = new Scanner(System.in);
-        String anagrama1 = scanner.nextLine();
-        String anagrama2 = scanner.nextLine();
-        List1 = ListCreation(anagrama1);
-        List2 = ListCreation(anagrama2);
-        Collections.sort(List1);
-        Collections.sort(List2);
-        if (List1.size() != List2.size()){
-            System.out.println("Not Anagrams");
-        }
-        else {
-            if (CountCharacters(List1, List2)){
-                System.out.println("Anagrams");
-            }
-            else{
-                System.out.println("Not Anagrams");
-            }
-        }
-    }
-    
-    public static boolean CountCharacters(List L1, List L2){
-        L1.removeAll( L2 );
-        if (L1.isEmpty()){
-            return true;
+        int ejercicio = scanner.nextInt();
+        if (ejercicio == 1){
+            Ejercicio1.Start();
         }
         else{
-            return false;
+            Ejercicio2.Start();
         }
+        
     }
     
-    public static List ListCreation(String anagrama){
-        List charList1 = new ArrayList(); 
-        int i = 0;
-        for(char ch : anagrama.toCharArray()){
-            
-            ch = Character.toLowerCase(ch);
-            charList1.add(ch); 
-            i++;
-        }
-        return charList1;
-    }
     
 }
